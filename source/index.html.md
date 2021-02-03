@@ -55,20 +55,20 @@ $.ajax(settings).done(function (response) {
 ```
 > Make sure to use the correct values for variables `{{http(s)}}, {{baseUrl}}, {{basePort}}, {{contextPath}}`
 
-#### Query Parameters
+> The above command returns JSON structured like this:
 
-Parameter | Default | Description
---------- | ------- | -----------
-cdoId |  | An example is 68bcd5a4-5707-32a5-b500-77b6467180ca
-
-#### Return
-`json
+```json
 {
 	"name" : "Any Database Added",
 	"ruleType" : "Added",
 	"firstNode" : "Database"
 }
-`
+```
+#### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+cdoId |  | An example is 68bcd5a4-5707-32a5-b500-77b6467180ca
 
 <aside class="success">
 Will list all the audit dates
