@@ -29,6 +29,7 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 ## History
 ### Get Audit history dates
 > To get the dates of audit, use this code:
+
 ```shell
 curl --location --request GET '{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/history/68bcd5a4-5707-32a5-b500-77b6467180ca/dates?page=0&size=10' \
 --header 'Content-Type: application/json' \
