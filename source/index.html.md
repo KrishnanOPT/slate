@@ -59,15 +59,14 @@ fetch("{baseUrl}/authenticate?username={{username}}&password={{password}}", requ
 ```
 
 Return value from API
-
-```
+<aside class="notice">
 {
    "access_token":"eyJhbGciOiJSUzI1N-----UUjw",
    "expires_in":28799,
    "token_type":"Bearer",
    "userId":"1830468e-0d24-4e58-9f1d-6c5136b8548a"
 }
-```
+</aside>
 
 # History
 History API is for getting 
