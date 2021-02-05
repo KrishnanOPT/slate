@@ -31,6 +31,8 @@ These are set of methods that are called for authenticating the user on CodeLogi
 ## Authenticate
 To authenticate into CodeLogic server.
 
+-- /authenticate?username={{username}}&password={{password}}
+
 > API call
 
 ```shell
