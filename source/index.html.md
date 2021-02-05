@@ -28,7 +28,6 @@ Register with CodeLogic to get access URL's for testing, use the baseUrl that is
 
 # Authenticate
 These are set of methods that are called for authenticating the user on CodeLogic servers
-## Authenticate
 
 > API call
 
@@ -72,6 +71,7 @@ To authenticate into CodeLogic server.
 <aside class="notice">
 The access token returned is used by the API for linking with the current session.
 </aside>
+
 
 # History
 History API is for getting 
