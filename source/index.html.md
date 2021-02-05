@@ -80,7 +80,7 @@ Will list all the audit dates
 
 ### GET Audit History Ids For Date
 
-> To get the list of audit settings added for a particular date
+To get the list of audit settings added for a particular date
 
 ```shell
 curl --location --request GET '{baseUrl}/audit/history/:cdoId/ids?page=0&size=5&date=2020-09-28' \
@@ -108,7 +108,7 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-> To get the correct value for `cdold` you will need to use `Authenticate` API with the username and password to get the value of `cdold`.  
+To get the correct value for `cdold` you will need to use `Authenticate` API with the username and password to get the value of `cdold`.  
 
 
 ## Rules
