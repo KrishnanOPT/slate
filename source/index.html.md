@@ -26,10 +26,41 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 ## Register for access
 Register with CodeLogic to get access URL's for testing, use the baseUrl that is provided to access the API calls. 
 
-# Governance
-## History
+# Authenticate
+These are set of methods that are called for authenticating the user on CodeLogic servers
+## Authenticate
+> To authenticate into CodeLogic server.
+```shell
+wget --no-check-certificate --quiet \
+  --method POST \
+  --timeout=0 \
+  --header '' \
+   '{baseUrl}/authenticate?username={{username}}&password={{password}}'
+```
+
+```javascript
+var requestOptions = {
+  method: 'POST',
+  redirect: 'follow'
+};
+
+fetch("{baseUrl}/authenticate?username={{username}}&password={{password}}", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+};
+
+```
+
+> Return value from API
+
+```json
+{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MTI1NDUwNzgsImlhdCI6MTYxMjUxNjI3OCwiaXNzIjoiY29kZWxvZ2ljLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6IjFhYTYzOGEwLTczN2YtNGRiMy1hNTRmLTQwYjA4Y2UxMmM2MiIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJ0ZW1wb3JhcnlhZG1pbkBjb2RlbG9naWMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImFwcGxpY2F0aW9uSWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJyb2xlcyI6WyJDb2RlTG9naWMgLSBBZG1pbiJdfQ.G67Px4iysb6gUYjOD0I6SNFJb7MypIVIr1NiQqcZTPtJ6fXK_1GbmkOaKEaOcoz2tTuDQaKWYvBdIkLKGXxOVOyamAqicjv8i9mFsauvzTi6GwulIZmXBlnWl6g4nysb3KpX0Iqm2bIFf4uC3VaD5ydLP6XCAaCu_Itui60Dyl68UlRkzmlLHlaf3kIbCQkCpI9vHKcAVjrolDIbhd-8EowfiYh58UrMnNxArnybpIjnMigQN8s-EvF5T1aZ_FMUVeLzY9Bua-ehGqIFPV2Ut03dAzbZ5TUi88dGuFbxpbHqwQmf8ENML9LVK3UqY11Jl4oCBBakufr3x1VRVvUUjw","expires_in":28799,"token_type":"Bearer","userId":"1830468e-0d24-4e58-9f1d-6c5136b8548a"}
+```
+
+# History
 History API is for getting 
-### Get Audit history dates
+## Get Audit history dates
 > To get the list of all audit settings:
 
 ```shell
@@ -68,7 +99,7 @@ $.ajax(settings).done(function (response) {
 	"firstNode" : "Database"
 }
 ```
-#### Query Parameters
+### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
@@ -78,7 +109,7 @@ cdoId |  | An example is 68bcd5a4-5707-32a5-b500-77b6467180ca
 Will list all the audit dates
 </aside>
 
-### GET Audit History Ids For Date
+## GET Audit History Ids For Date
 
 To get the list of audit settings added for a particular date
 
@@ -111,8 +142,9 @@ $.ajax(settings).done(function (response) {
 To get the correct value for `cdold` you will need to use `Authenticate` API with the username and password to get the value of `cdold`.  
 
 
-## Rules
-## Matches
+# Rules
+# Matches
+
 # FusionAuth
 # AuthController
 # Dependency
