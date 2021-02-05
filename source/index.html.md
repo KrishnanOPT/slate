@@ -27,7 +27,6 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 Register with CodeLogic to get access URL's for testing, use the baseUrl that is provided to access the API calls. 
 
 # Authenticate
-These are set of methods that are called for authenticating the user on CodeLogic servers
 
 > API call
 
@@ -75,8 +74,9 @@ The access token returned is used by the API for linking with the current sessio
 
 # History
 History API is for getting 
-## Get Audit history dates
-> To get the list of all audit settings:
+## Audit history dates
+
+>API Call
 
 ```shell
 curl --location --request GET '{baseUrl}/audit/history/{cdoId}/dates?page=0&size=10' \
@@ -103,9 +103,7 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
-> To get the correct value for `cdold` you will need to use `Authenticate` API with the username and password to get the value of `cdold`.  
-
-> The above command returns JSON structured like this:
+> Return value from API
 
 ```json
 {
@@ -114,11 +112,12 @@ $.ajax(settings).done(function (response) {
 	"firstNode" : "Database"
 }
 ```
-### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-cdoId |  | An example is 68bcd5a4-5707-32a5-b500-77b6467180ca
+To get the list of all audit settings:
+
+`
+/audit/history/:cdoId/dates?page=0&size=10
+`
 
 <aside class="success">
 Will list all the audit dates
