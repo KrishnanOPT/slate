@@ -32,6 +32,7 @@ These are set of methods that are called for authenticating the user on CodeLogi
 To authenticate into CodeLogic server.
 
 > API call
+
 ```shell
 wget --no-check-certificate --quiet \
   --method POST \
