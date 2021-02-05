@@ -58,16 +58,16 @@ fetch("{baseUrl}/authenticate?username={{username}}&password={{password}}", requ
 };
 ```
 
-Return value from API
+> Return value from API
 
-`
-{%3Cbr%3E
-   "access_token":"eyJhbGciOiJSUzI1N-----UUjw",%3Cbr%3E
-   "expires_in":28799,%3Cbr%3E
-   "token_type":"Bearer",%3Cbr%3E
-   "userId":"1830468e-0d24-4e8-9f1d-6c5136b8548a"%3Cbr%3E
+```json
+{
+   "access_token":"eyJhbGciOiJSUzI1N-----UUjw",
+   "expires_in":28799,
+   "token_type":"Bearer",
+   "userId":"1830468e-0d24-4e8-9f1d-6c5136b8548a"
 }
-`
+```
 
 <aside class="notice">
 The access token returned is used by the API for linking with the current session.
