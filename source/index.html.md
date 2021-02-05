@@ -23,13 +23,8 @@ Welcome to the CodeLogic API! You can use our API to access CodeLogic API endpoi
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-<<<<<<< HEAD
 ## Register for access
 Register with CodeLogic to get access URL's for testing, use the baseUrl that is provided to access the API calls. 
-
-=======
-OnPath
->>>>>>> e4a6bbda89d8726ade4d5dc6b495d715fb947ac3
 
 # Governance
 ## History
@@ -84,7 +79,9 @@ Will list all the audit dates
 </aside>
 
 ### GET Audit History Ids For Date
+
 > To get the list of audit settings added for a particular date
+
 ```shell
 curl --location --request GET '{baseUrl}/audit/history/:cdoId/ids?page=0&size=5&date=2020-09-28' \
 --header 'Content-Type: application/json' \
@@ -110,6 +107,7 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
+
 > To get the correct value for `cdold` you will need to use `Authenticate` API with the username and password to get the value of `cdold`.  
 
 
