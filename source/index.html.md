@@ -29,11 +29,6 @@ Register with CodeLogic to get access URL's for testing, use the baseUrl that is
 # Authenticate
 These are set of methods that are called for authenticating the user on CodeLogic servers
 ## Authenticate
-To authenticate into CodeLogic server.
-
-`
-/authenticate?username={{username}}&password={{password}}
-`
 
 > API call
 
@@ -68,6 +63,11 @@ fetch("{baseUrl}/authenticate?username={{username}}&password={{password}}", requ
    "userId":"1830468e-0d24-4e8-9f1d-6c5136b8548a"
 }
 ```
+To authenticate into CodeLogic server.
+
+`
+/authenticate?username={{username}}&password={{password}}
+`
 
 <aside class="notice">
 The access token returned is used by the API for linking with the current session.
