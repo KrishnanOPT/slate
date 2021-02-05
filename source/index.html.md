@@ -29,7 +29,8 @@ Register with CodeLogic to get access URL's for testing, use the baseUrl that is
 # Authenticate
 These are set of methods that are called for authenticating the user on CodeLogic servers
 ## Authenticate
-> To authenticate into CodeLogic server.
+To authenticate into CodeLogic server.
+
 ```shell
 wget --no-check-certificate --quiet \
   --method POST \
@@ -49,7 +50,6 @@ fetch("{baseUrl}/authenticate?username={{username}}&password={{password}}", requ
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 };
-
 ```
 
 > Return value from API
