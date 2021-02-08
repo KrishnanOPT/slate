@@ -27,7 +27,15 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 Register with CodeLogic to get access URL's for testing, use the baseUrl that is provided to access the API calls. 
 
 # Authenticate
-
+## Purpose
+To get the login access token
+## Pre-Requisites
+You will need valid username and password combination.
+## Call
+To authenticate into CodeLogic server.
+`
+/authenticate?username={{username}}&password={{password}}
+`
 > API call
 
 ```shell
@@ -50,7 +58,7 @@ fetch("{baseUrl}/authenticate?username={{username}}&password={{password}}", requ
   .catch(error => console.log('error', error));
 };
 ```
-
+## Return Values
 > Return value from API
 
 ```json
@@ -61,27 +69,10 @@ fetch("{baseUrl}/authenticate?username={{username}}&password={{password}}", requ
    "userId":"1830468e-0d24-4e8-9f1d-6c5136b8548a"
 }
 ```
-## Purpose
-To get the login access token
-
-## Pre-Requisites
-You will need valid username and password combination.
-
-## Call
-To authenticate into CodeLogic server.
-
-`
-/authenticate?username={{username}}&password={{password}}
-`
-## Errors
 ### 404
 When API call is not reachable
 ### 401
 Server is too slow
-
-
-
-
 
 <aside class="notice">
 The access token returned is used by the API for linking with the current session.
