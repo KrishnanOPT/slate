@@ -73,17 +73,12 @@ To authenticate into CodeLogic server.
 When API call is not reachable
 ### 401
 Server is too slow
-
-<aside class="notice">
-The access token returned is used by the API for linking with the current session.
-</aside>
-
-
 # History
-History API is for getting 
+History API's are used for getting historical audit trails 
 ## Audit history dates
 ### Purpose
 To get the audit dates
+? Not clear what audit dates mean, are these the dates when an governance rule is run?
 ## Pre-Requisites
 You will need a valid cdoid
 ### Call
@@ -129,7 +124,7 @@ To get the list of all audit settings:
 	"firstNode" : "Database"
 }
 ```
-## GET Audit History Ids For Date
+## Audit History Ids For Date
 ### Purpose
 To get the list of audit settings added for a particular date
 ## Pre-Requisites
