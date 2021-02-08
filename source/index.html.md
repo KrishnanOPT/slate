@@ -78,9 +78,11 @@ History API's are used for getting historical audit trails
 ## Audit history dates
 ### Purpose
 To get the audit dates
+<aside class="notice">
 ** Open Queries **
 * not clear what audit dates mean
 * are these the dates when an governance rule is run
+</aside>
 ### Pre-Requisites
 You will need a valid cdoid
 ### Call
