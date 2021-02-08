@@ -132,6 +132,7 @@ You will need a valid cdoid
 
 ## Audit History Ids For Date
 >API Call
+
 ```shell
 curl --location --request GET '{baseUrl}/audit/history/:cdoId/ids?page=0&size=5&date=2020-09-28' \
 --header 'Content-Type: application/json' \
