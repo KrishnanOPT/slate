@@ -79,7 +79,7 @@ History API's are used for getting historical audit trails
 ### Purpose
 To get the audit dates
 <aside class="notice">
-** Open Queries **
+**Open Queries**
 * not clear what audit dates mean
 * are these the dates when an governance rule is run
 </aside>
