@@ -299,7 +299,9 @@ $.ajax(settings).done(function (response) {
 ```
 > Return Values
 
-```{"status":"success","data":[{"name":"Krishnan_Audi","createdOn":"2021-02-05T12:50:46.186","firstNode":"Any","firstNodePropertyWatches":[],"firstNodeFilters":[{"id":"67f39a94-92e9-3822-b284-1246bab1b3a8"}],"ruleType":"Added","secondNodeFilters":[]},{"name":"Created By Automation","createdOn":"2021-02-01T13:23:49.685","firstNode":"Application","firstNodePropertyWatches":[],"firstNodeFilters":[],"ruleType":"Added","secondNodeFilters":[]}]}```
+```
+{"status":"success","data":[{"name":"Krishnan_Audi","createdOn":"2021-02-05T12:50:46.186","firstNode":"Any","firstNodePropertyWatches":[],"firstNodeFilters":[{"id":"67f39a94-92e9-3822-b284-1246bab1b3a8"}],"ruleType":"Added","secondNodeFilters":[]},{"name":"Created By Automation","createdOn":"2021-02-01T13:23:49.685","firstNode":"Application","firstNodePropertyWatches":[],"firstNodeFilters":[],"ruleType":"Added","secondNodeFilters":[]}]}
+```
 
 ### Purpose
 To get the create a new rule
