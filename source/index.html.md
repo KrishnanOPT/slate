@@ -276,21 +276,26 @@ When API call is not reachable
 >API Call
 
 ```shell
-curl --location -g --request GET '{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/history/68bcd5a4-5707-32a5-b500-77b6467180ca' \
+curl --location -g --request POST '{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/rule' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MDE2ODA1MjksImlhdCI6MTYwMTY1MTcyOSwiaXNzIjoiY3Jvc3Njb2RlLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6IjQ4ZjA4NzllLWRmNjctNGNkYS04NWVlLWI5NGNkNzI0MWFhNyIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJmdXNpb25hdXRoYWRtaW5AY3Jvc3Njb2RlLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhcHBsaWNhdGlvbklkIjoiN2ZkMzI2ODAtNzAwZS00YmZjLTlhYzAtYmI3ZTE3ZjYzYjcwIiwicm9sZXMiOlsiTmVvNGNhcGUgLSBBZG1pbiJdfQ.lYGlbA4UG1NUhqcA_McKgs-X6LJUBAGAAVaDx-ItZrTJohXXtPnH70UR905E6Js78R75e76JYQDlsi-9eiqUBnZLcj4-_Xwgz1VR1XutnabDIkxLACxOo1F_LQTn1gU-U_ul-jJdM2g5x-ojv4er6fyHFj3S7BXPISwefLDYvm6DyHBi7AcbZMqrQJXbKuBko0RQKJwAVffeaL1mzeXMd1BFfLpAWHCF_al4I9ojZa3uuZsHQP6v3YD_wwq8XbTbewhBblDj95n_kJQaCa5HGr2OP6KrupY0ZWe0r2KYm8T6XKIeqI0AvuZcfuD5xT_eCwXpD0TYKSdDq1KwpioCiw' \
---data-raw ''
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MTAwNjg3OTgsImlhdCI6MTYxMDAzOTk5OCwiaXNzIjoiY29kZWxvZ2ljLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6ImNlYWQ5NDMxLWMwZmUtNDMwNy1hMTExLWFlYzQ2ZWQ4ZDNmMiIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJ0ZW1wb3JhcnlhZG1pbkBjb2RlbG9naWMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImFwcGxpY2F0aW9uSWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJyb2xlcyI6WyJDb2RlTG9naWMgLSBBZG1pbiJdfQ.KefzDKqgUaxW1n753qIzesdipR_JIoX3fXpcIRaMHCrBsT45vs0jtPOJjm9xMK_hiFnyiPysrsE1CVu4u_moGPyiXb1te5YvTUl-EgPPPtAh0AsBbcCcm06XqTxfMMKzDuMhqVX_cQ6vAqcsOQDTJmTG6lff8d78Yrc2TLkBLzwqvxpJJF048D8dPB8Qm1hSVXzaOKYVFQOR5_DLi3_NSfqMjGaf1b2jInHK-EKSpGdcWWLG2BvwgO2dCkhSskmlKTBuPjQhCiNTQ0Lm8g40TT7aKELfsNjW6PUvfZ9VK2fy0TsYJ6UK8S1iyByxDouMMTHzPt0ZtpicAgfce8nffQ' \
+--data-raw '{
+	"name" : "Any Application Added",
+	"ruleType" : "Added",
+	"firstNode" : "Application"
+}'
 ```
 
 ```javascript
 var settings = {
-  "url": "{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/history/68bcd5a4-5707-32a5-b500-77b6467180ca",
-  "method": "GET",
+  "url": "{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/rule",
+  "method": "POST",
   "timeout": 0,
   "headers": {
     "Content-Type": "application/json",
-    "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MDE2ODA1MjksImlhdCI6MTYwMTY1MTcyOSwiaXNzIjoiY3Jvc3Njb2RlLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6IjQ4ZjA4NzllLWRmNjctNGNkYS04NWVlLWI5NGNkNzI0MWFhNyIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJmdXNpb25hdXRoYWRtaW5AY3Jvc3Njb2RlLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhcHBsaWNhdGlvbklkIjoiN2ZkMzI2ODAtNzAwZS00YmZjLTlhYzAtYmI3ZTE3ZjYzYjcwIiwicm9sZXMiOlsiTmVvNGNhcGUgLSBBZG1pbiJdfQ.lYGlbA4UG1NUhqcA_McKgs-X6LJUBAGAAVaDx-ItZrTJohXXtPnH70UR905E6Js78R75e76JYQDlsi-9eiqUBnZLcj4-_Xwgz1VR1XutnabDIkxLACxOo1F_LQTn1gU-U_ul-jJdM2g5x-ojv4er6fyHFj3S7BXPISwefLDYvm6DyHBi7AcbZMqrQJXbKuBko0RQKJwAVffeaL1mzeXMd1BFfLpAWHCF_al4I9ojZa3uuZsHQP6v3YD_wwq8XbTbewhBblDj95n_kJQaCa5HGr2OP6KrupY0ZWe0r2KYm8T6XKIeqI0AvuZcfuD5xT_eCwXpD0TYKSdDq1KwpioCiw"
+    "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MTAwNjg3OTgsImlhdCI6MTYxMDAzOTk5OCwiaXNzIjoiY29kZWxvZ2ljLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6ImNlYWQ5NDMxLWMwZmUtNDMwNy1hMTExLWFlYzQ2ZWQ4ZDNmMiIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJ0ZW1wb3JhcnlhZG1pbkBjb2RlbG9naWMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImFwcGxpY2F0aW9uSWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJyb2xlcyI6WyJDb2RlTG9naWMgLSBBZG1pbiJdfQ.KefzDKqgUaxW1n753qIzesdipR_JIoX3fXpcIRaMHCrBsT45vs0jtPOJjm9xMK_hiFnyiPysrsE1CVu4u_moGPyiXb1te5YvTUl-EgPPPtAh0AsBbcCcm06XqTxfMMKzDuMhqVX_cQ6vAqcsOQDTJmTG6lff8d78Yrc2TLkBLzwqvxpJJF048D8dPB8Qm1hSVXzaOKYVFQOR5_DLi3_NSfqMjGaf1b2jInHK-EKSpGdcWWLG2BvwgO2dCkhSskmlKTBuPjQhCiNTQ0Lm8g40TT7aKELfsNjW6PUvfZ9VK2fy0TsYJ6UK8S1iyByxDouMMTHzPt0ZtpicAgfce8nffQ"
   },
+  "data": JSON.stringify({"name":"Any Application Added","ruleType":"Added","firstNode":"Application"}),
 };
 
 $.ajax(settings).done(function (response) {
@@ -321,6 +326,152 @@ When API call is not reachable
 * It returned an already created rule, so not sure how it creates a rule.
 * list of errors returned by API 
 
+## Audit Rule - Disable
+>API Call
+
+```shell
+curl --location -g --request PATCH '{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/rule/5ff743fd168e2a315db4160a/disable' \
+--header 'Content-Type: application/json' \
+--data-raw ''
+```
+
+```javascript
+var settings = {
+  "url": "{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/rule/5ff743fd168e2a315db4160a/disable",
+  "method": "PATCH",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+> Return Values
+
+```
+??
+```
+
+### Purpose
+To disable an existing rule
+### Pre-Requisites
+You will need a valid rule id
+### Call
+To get the list of ??
+
+`
+/audit/rule/:id/disable
+`
+### Return Values
+#### 404
+When API call is not reachable
+### Open Queries
+* How to identify id
+* list of errors returned by API 
+
+## Audit Rule - Enable
+>API Call
+
+```shell
+curl --location -g --request PATCH '{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/rule/5ff743fd168e2a315db4160a/enable' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MTAwNjg3OTgsImlhdCI6MTYxMDAzOTk5OCwiaXNzIjoiY29kZWxvZ2ljLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6ImNlYWQ5NDMxLWMwZmUtNDMwNy1hMTExLWFlYzQ2ZWQ4ZDNmMiIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJ0ZW1wb3JhcnlhZG1pbkBjb2RlbG9naWMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImFwcGxpY2F0aW9uSWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJyb2xlcyI6WyJDb2RlTG9naWMgLSBBZG1pbiJdfQ.KefzDKqgUaxW1n753qIzesdipR_JIoX3fXpcIRaMHCrBsT45vs0jtPOJjm9xMK_hiFnyiPysrsE1CVu4u_moGPyiXb1te5YvTUl-EgPPPtAh0AsBbcCcm06XqTxfMMKzDuMhqVX_cQ6vAqcsOQDTJmTG6lff8d78Yrc2TLkBLzwqvxpJJF048D8dPB8Qm1hSVXzaOKYVFQOR5_DLi3_NSfqMjGaf1b2jInHK-EKSpGdcWWLG2BvwgO2dCkhSskmlKTBuPjQhCiNTQ0Lm8g40TT7aKELfsNjW6PUvfZ9VK2fy0TsYJ6UK8S1iyByxDouMMTHzPt0ZtpicAgfce8nffQ' \
+--data-raw ''
+```
+
+```javascript
+var settings = {
+  "url": "{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/rule/5ff743fd168e2a315db4160a/enable",
+  "method": "PATCH",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MTAwNjg3OTgsImlhdCI6MTYxMDAzOTk5OCwiaXNzIjoiY29kZWxvZ2ljLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6ImNlYWQ5NDMxLWMwZmUtNDMwNy1hMTExLWFlYzQ2ZWQ4ZDNmMiIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJ0ZW1wb3JhcnlhZG1pbkBjb2RlbG9naWMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImFwcGxpY2F0aW9uSWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJyb2xlcyI6WyJDb2RlTG9naWMgLSBBZG1pbiJdfQ.KefzDKqgUaxW1n753qIzesdipR_JIoX3fXpcIRaMHCrBsT45vs0jtPOJjm9xMK_hiFnyiPysrsE1CVu4u_moGPyiXb1te5YvTUl-EgPPPtAh0AsBbcCcm06XqTxfMMKzDuMhqVX_cQ6vAqcsOQDTJmTG6lff8d78Yrc2TLkBLzwqvxpJJF048D8dPB8Qm1hSVXzaOKYVFQOR5_DLi3_NSfqMjGaf1b2jInHK-EKSpGdcWWLG2BvwgO2dCkhSskmlKTBuPjQhCiNTQ0Lm8g40TT7aKELfsNjW6PUvfZ9VK2fy0TsYJ6UK8S1iyByxDouMMTHzPt0ZtpicAgfce8nffQ"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+> Return Values
+
+```
+??
+```
+
+### Purpose
+To enable an existing rule
+### Pre-Requisites
+You will need a valid rule id
+### Call
+To get the list of ??
+
+`
+/audit/rule/:id/enable
+`
+### Return Values
+#### 404
+When API call is not reachable
+### Open Queries
+* How to identify id
+* list of errors returned by API 
+
+## Audit Rules
+>API Call
+
+```shell
+curl --location -g --request GET '{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/rule?page=0&size=10' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MDE1OTIwNTAsImlhdCI6MTYwMTU2MzI1MCwiaXNzIjoiY3Jvc3Njb2RlLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6IjQ4YWFmNDlhLTY0YWEtNDQ0My1iNjI0LWVlODRjYzRhOTI1NCIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJmdXNpb25hdXRoYWRtaW5AY3Jvc3Njb2RlLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhcHBsaWNhdGlvbklkIjoiN2ZkMzI2ODAtNzAwZS00YmZjLTlhYzAtYmI3ZTE3ZjYzYjcwIiwicm9sZXMiOlsiTmVvNGNhcGUgLSBBZG1pbiJdfQ.k0orE-8XchdeFM6J9v7WbBhpuoYB6BWilvWKHKjqzwRCdv9ZaLYHkxPTh3aZzKcnOi4ir99r4KbfJ7lpdhawSjjjY1mgWlGIhzcsx1tHPvnvYYyyyapdb-YB0Rkp7JwuUAYecYwRKtwchEr0_Bl_juup41BjVb8d7GByQ6iJFTo-iIsxcir6CxrkgXwkqNZLZhfGoQY3o1pINYlGC9tCOw5bgp2IA0pY2xrwEhY7KJrrPIGVz2gNg-3PwTHMz2JE9KG073DqI4TZkqkYv_VNBwvuPLb8Ib5QgrwRSALAG6iMvvorXVqBtSIv9g-OT0Hz86hoJlEHoUvP7O4nsJ57nA' \
+--data-raw '{
+	"name" : "Any Database Added",
+	"ruleType" : "Added",
+	"firstNode" : "Database"
+}'
+```
+
+```javascript
+var settings = {
+  "url": "{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/rule?page=0&size=10",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MDE1OTIwNTAsImlhdCI6MTYwMTU2MzI1MCwiaXNzIjoiY3Jvc3Njb2RlLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6IjQ4YWFmNDlhLTY0YWEtNDQ0My1iNjI0LWVlODRjYzRhOTI1NCIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJmdXNpb25hdXRoYWRtaW5AY3Jvc3Njb2RlLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhcHBsaWNhdGlvbklkIjoiN2ZkMzI2ODAtNzAwZS00YmZjLTlhYzAtYmI3ZTE3ZjYzYjcwIiwicm9sZXMiOlsiTmVvNGNhcGUgLSBBZG1pbiJdfQ.k0orE-8XchdeFM6J9v7WbBhpuoYB6BWilvWKHKjqzwRCdv9ZaLYHkxPTh3aZzKcnOi4ir99r4KbfJ7lpdhawSjjjY1mgWlGIhzcsx1tHPvnvYYyyyapdb-YB0Rkp7JwuUAYecYwRKtwchEr0_Bl_juup41BjVb8d7GByQ6iJFTo-iIsxcir6CxrkgXwkqNZLZhfGoQY3o1pINYlGC9tCOw5bgp2IA0pY2xrwEhY7KJrrPIGVz2gNg-3PwTHMz2JE9KG073DqI4TZkqkYv_VNBwvuPLb8Ib5QgrwRSALAG6iMvvorXVqBtSIv9g-OT0Hz86hoJlEHoUvP7O4nsJ57nA"
+  },
+  "data": JSON.stringify({"name":"Any Database Added","ruleType":"Added","firstNode":"Database"}),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+> Return Values
+
+```
+??
+```
+
+### Purpose
+To list all existing rule
+### Pre-Requisites
+You will need a valid session
+### Call
+To get the list of all rules
+
+`
+/audit/rule?page=0&size=10
+`
+### Return Values
+#### 404
+When API call is not reachable
+### Open Queries
+* How to identify id
+* list of errors returned by API 
 
 # Matches
 
