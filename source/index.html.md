@@ -164,7 +164,11 @@ To get the list of audit settings added for a particular date
 ### Pre-Requisites
 You will need a valid cdoid
 ### Call
-Call
+To get the list of all audit settings:
+
+`
+/audit/history/:cdoId/ids?page=0&size=5&date=2020-09-28
+`
 ### Return Values
 #### 404
 When API call is not reachable
@@ -174,6 +178,52 @@ When API call is not reachable
 * list of errors returned by API 
 * Result in JSON format
 * How to get CDOID
+
+## Audit CDO for Id
+>API Call
+
+```shell
+curl --location -g --request GET '{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/snapshot/68bcd5a4-5707-32a5-b500-77b6467180ca' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MTI0OTE0MTksImlhdCI6MTYxMjQ2MjYxOSwiaXNzIjoiY29kZWxvZ2ljLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6IjA1MmFjOWNkLWY3MmYtNDVlNC1hOWJlLWQ1NTU0ZGYwZjgyNCIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJ0ZW1wb3JhcnlhZG1pbkBjb2RlbG9naWMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImFwcGxpY2F0aW9uSWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJyb2xlcyI6WyJDb2RlTG9naWMgLSBBZG1pbiJdfQ.YLs2VGrhPWxJaNpoy0fmgenCCsyxnNM3kwC8ZuOtT4G6K-Bkw-ggeTu_AXnNIxmdX_JBhTzurefRs0Df4krOyQi7kMxRqMIcTS71i57UUu3vSKdyueq9HU6SpAAvOmEZbUFxAB5_ZkMAbve9JGwjNhKlzASsgQe-PGfqDhhRrzvSlmARAwIkXrX2nhQKgKAVENGU5gg5P5rM3Acn5TAohwna3de4AiGXd1ynsYUFHbmqDtmx5NkfNIHgo9_UZKppGtZQqE7wFENhOWQJxokutba9yV7njbOds2xrMDtIXjAJjvYuIXxyPSh0V71GiMwMPEdNVxl-o_yvZ1-IAPVc_g' \
+--data-raw ''
+```
+
+```javascript
+var settings = {
+  "url": "{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/snapshot/68bcd5a4-5707-32a5-b500-77b6467180ca",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MTI0OTE0MTksImlhdCI6MTYxMjQ2MjYxOSwiaXNzIjoiY29kZWxvZ2ljLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6IjA1MmFjOWNkLWY3MmYtNDVlNC1hOWJlLWQ1NTU0ZGYwZjgyNCIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJ0ZW1wb3JhcnlhZG1pbkBjb2RlbG9naWMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImFwcGxpY2F0aW9uSWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJyb2xlcyI6WyJDb2RlTG9naWMgLSBBZG1pbiJdfQ.YLs2VGrhPWxJaNpoy0fmgenCCsyxnNM3kwC8ZuOtT4G6K-Bkw-ggeTu_AXnNIxmdX_JBhTzurefRs0Df4krOyQi7kMxRqMIcTS71i57UUu3vSKdyueq9HU6SpAAvOmEZbUFxAB5_ZkMAbve9JGwjNhKlzASsgQe-PGfqDhhRrzvSlmARAwIkXrX2nhQKgKAVENGU5gg5P5rM3Acn5TAohwna3de4AiGXd1ynsYUFHbmqDtmx5NkfNIHgo9_UZKppGtZQqE7wFENhOWQJxokutba9yV7njbOds2xrMDtIXjAJjvYuIXxyPSh0V71GiMwMPEdNVxl-o_yvZ1-IAPVc_g"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+### Purpose
+To get the list of CDOID's
+### Pre-Requisites
+You will need a valid cdoid
+### Call
+To get the list of ??
+
+`
+/audit/snapshot/:id
+`
+### Return Values
+#### 404
+When API call is not reachable
+### Open Queries
+* not clear what audit dates mean
+* are these the dates when an governance rule is run
+* list of errors returned by API 
+* Result in JSON format
+* How to get id
 
 # Rules
 # Matches
