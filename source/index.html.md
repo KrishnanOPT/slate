@@ -103,6 +103,7 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
+> Return Values
 ```json
 {
 	"name" : "Any Database Added",
@@ -121,13 +122,15 @@ To get the audit dates
 ### Pre-Requisites
 You will need a valid cdoid
 ### Return Values
-###Open Queries
+### Open Queries
 * not clear what audit dates mean
 * are these the dates when an governance rule is run
 * list of errors returned by API 
 * Result in JSON format
+* How to get CDOID
 
 ## Audit History Ids For Date
+>API Call
 ```shell
 curl --location --request GET '{baseUrl}/audit/history/:cdoId/ids?page=0&size=5&date=2020-09-28' \
 --header 'Content-Type: application/json' \
@@ -162,6 +165,12 @@ Call
 ### Return Values
 #### 404
 When API call is not reachable
+### Open Queries
+* not clear what audit dates mean
+* are these the dates when an governance rule is run
+* list of errors returned by API 
+* Result in JSON format
+* How to get CDOID
 
 # Rules
 # Matches
