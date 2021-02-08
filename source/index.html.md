@@ -32,10 +32,6 @@ To get the login access token
 ## Pre-Requisites
 You will need valid username and password combination.
 ## Call
-To authenticate into CodeLogic server.
-`
-/authenticate?username={{username}}&password={{password}}
-`
 > API call
 
 ```shell
@@ -58,6 +54,10 @@ fetch("{baseUrl}/authenticate?username={{username}}&password={{password}}", requ
   .catch(error => console.log('error', error));
 };
 ```
+To authenticate into CodeLogic server.
+`
+/authenticate?username={{username}}&password={{password}}
+`
 ## Return Values
 > Return value from API
 
@@ -82,7 +82,11 @@ The access token returned is used by the API for linking with the current sessio
 # History
 History API is for getting 
 ## Audit history dates
-
+### Purpose
+To get the audit dates
+## Pre-Requisites
+You will need a valid cdoid
+### Call
 >API Call
 
 ```shell
@@ -110,6 +114,12 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
+To get the list of all audit settings:
+
+`
+/audit/history/:cdoId/dates?page=0&size=10
+`
+### Return Values
 > Return value from API
 
 ```json
@@ -119,21 +129,12 @@ $.ajax(settings).done(function (response) {
 	"firstNode" : "Database"
 }
 ```
-
-To get the list of all audit settings:
-
-`
-/audit/history/:cdoId/dates?page=0&size=10
-`
-
-<aside class="success">
-Will list all the audit dates
-</aside>
-
 ## GET Audit History Ids For Date
-
+### Purpose
 To get the list of audit settings added for a particular date
-
+## Pre-Requisites
+You will need a valid cdoid
+### Call
 ```shell
 curl --location --request GET '{baseUrl}/audit/history/:cdoId/ids?page=0&size=5&date=2020-09-28' \
 --header 'Content-Type: application/json' \
@@ -159,9 +160,9 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
-
-To get the correct value for `cdold` you will need to use `Authenticate` API with the username and password to get the value of `cdold`.  
-
+### Return Values
+#### 404
+When API call is not reachable
 
 # Rules
 # Matches
