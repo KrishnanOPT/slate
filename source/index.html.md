@@ -111,6 +111,7 @@ $.ajax(settings).done(function (response) {
 	"firstNode" : "Database"
 }
 ```
+
 ### Call
 To get the list of all audit settings:
 
@@ -156,6 +157,7 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
+
 ### Purpose
 To get the list of audit settings added for a particular date
 ### Pre-Requisites
