@@ -78,8 +78,10 @@ History API's are used for getting historical audit trails
 ## Audit history dates
 ### Purpose
 To get the audit dates
-? Not clear what audit dates mean, are these the dates when an governance rule is run?
-## Pre-Requisites
+** Open Queries **
+* not clear what audit dates mean
+* are these the dates when an governance rule is run
+### Pre-Requisites
 You will need a valid cdoid
 ### Call
 >API Call
@@ -127,7 +129,7 @@ To get the list of all audit settings:
 ## Audit History Ids For Date
 ### Purpose
 To get the list of audit settings added for a particular date
-## Pre-Requisites
+### Pre-Requisites
 You will need a valid cdoid
 ### Call
 ```shell
