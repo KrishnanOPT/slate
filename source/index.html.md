@@ -225,6 +225,52 @@ When API call is not reachable
 * Result in JSON format
 * How to get id
 
+## Audit History
+>API Call
+
+```shell
+curl --location -g --request GET '{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/history/68bcd5a4-5707-32a5-b500-77b6467180ca' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MDE2ODA1MjksImlhdCI6MTYwMTY1MTcyOSwiaXNzIjoiY3Jvc3Njb2RlLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6IjQ4ZjA4NzllLWRmNjctNGNkYS04NWVlLWI5NGNkNzI0MWFhNyIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJmdXNpb25hdXRoYWRtaW5AY3Jvc3Njb2RlLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhcHBsaWNhdGlvbklkIjoiN2ZkMzI2ODAtNzAwZS00YmZjLTlhYzAtYmI3ZTE3ZjYzYjcwIiwicm9sZXMiOlsiTmVvNGNhcGUgLSBBZG1pbiJdfQ.lYGlbA4UG1NUhqcA_McKgs-X6LJUBAGAAVaDx-ItZrTJohXXtPnH70UR905E6Js78R75e76JYQDlsi-9eiqUBnZLcj4-_Xwgz1VR1XutnabDIkxLACxOo1F_LQTn1gU-U_ul-jJdM2g5x-ojv4er6fyHFj3S7BXPISwefLDYvm6DyHBi7AcbZMqrQJXbKuBko0RQKJwAVffeaL1mzeXMd1BFfLpAWHCF_al4I9ojZa3uuZsHQP6v3YD_wwq8XbTbewhBblDj95n_kJQaCa5HGr2OP6KrupY0ZWe0r2KYm8T6XKIeqI0AvuZcfuD5xT_eCwXpD0TYKSdDq1KwpioCiw' \
+--data-raw ''
+```
+
+```javascript
+var settings = {
+  "url": "{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/history/68bcd5a4-5707-32a5-b500-77b6467180ca",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ing5cXo4QV9aZkpXWjJKMTFEV3VWSkFTdGZuRSJ9.eyJhdWQiOiI3ZmQzMjY4MC03MDBlLTRiZmMtOWFjMC1iYjdlMTdmNjNiNzAiLCJleHAiOjE2MDE2ODA1MjksImlhdCI6MTYwMTY1MTcyOSwiaXNzIjoiY3Jvc3Njb2RlLmNvbSIsInN1YiI6IjE4MzA0NjhlLTBkMjQtNGU1OC05ZjFkLTZjNTEzNmI4NTQ4YSIsImp0aSI6IjQ4ZjA4NzllLWRmNjctNGNkYS04NWVlLWI5NGNkNzI0MWFhNyIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJmdXNpb25hdXRoYWRtaW5AY3Jvc3Njb2RlLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhcHBsaWNhdGlvbklkIjoiN2ZkMzI2ODAtNzAwZS00YmZjLTlhYzAtYmI3ZTE3ZjYzYjcwIiwicm9sZXMiOlsiTmVvNGNhcGUgLSBBZG1pbiJdfQ.lYGlbA4UG1NUhqcA_McKgs-X6LJUBAGAAVaDx-ItZrTJohXXtPnH70UR905E6Js78R75e76JYQDlsi-9eiqUBnZLcj4-_Xwgz1VR1XutnabDIkxLACxOo1F_LQTn1gU-U_ul-jJdM2g5x-ojv4er6fyHFj3S7BXPISwefLDYvm6DyHBi7AcbZMqrQJXbKuBko0RQKJwAVffeaL1mzeXMd1BFfLpAWHCF_al4I9ojZa3uuZsHQP6v3YD_wwq8XbTbewhBblDj95n_kJQaCa5HGr2OP6KrupY0ZWe0r2KYm8T6XKIeqI0AvuZcfuD5xT_eCwXpD0TYKSdDq1KwpioCiw"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+### Purpose
+To get the list of history logs for a CDOID
+### Pre-Requisites
+You will need a valid cdoid
+### Call
+To get the list of ??
+
+`
+/audit/history/:cdoId
+`
+### Return Values
+#### 404
+When API call is not reachable
+### Open Queries
+* not clear what audit dates mean
+* are these the dates when an governance rule is run
+* list of errors returned by API 
+* Result in JSON format
+* How to get id
+
 # Rules
 # Matches
 
