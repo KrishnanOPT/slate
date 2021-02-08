@@ -128,11 +128,6 @@ To get the list of all audit settings:
 * are these the dates when an governance rule is run
 
 ## Audit History Ids For Date
-### Purpose
-To get the list of audit settings added for a particular date
-### Pre-Requisites
-You will need a valid cdoid
-### Call
 ```shell
 curl --location --request GET '{baseUrl}/audit/history/:cdoId/ids?page=0&size=5&date=2020-09-28' \
 --header 'Content-Type: application/json' \
@@ -158,6 +153,12 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
+### Purpose
+To get the list of audit settings added for a particular date
+### Pre-Requisites
+You will need a valid cdoid
+### Call
+Call
 ### Return Values
 #### 404
 When API call is not reachable
