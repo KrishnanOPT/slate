@@ -126,6 +126,7 @@ To get the list of all audit settings:
 ###Open Queries
 * not clear what audit dates mean
 * are these the dates when an governance rule is run
+
 ## Audit History Ids For Date
 ### Purpose
 To get the list of audit settings added for a particular date
