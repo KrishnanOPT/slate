@@ -76,11 +76,6 @@ Server is too slow
 # History
 History API's are used for getting historical audit trails 
 ## Audit history dates
-To get the list of all audit settings:
-
-`
-/audit/history/:cdoId/dates?page=0&size=10
-`
 >API Call
 
 ```shell
@@ -108,13 +103,6 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
-### Purpose
-To get the audit dates
-### Pre-Requisites
-You will need a valid cdoid
-### Return Values
-> Return value from API
-
 ```json
 {
 	"name" : "Any Database Added",
@@ -122,9 +110,22 @@ You will need a valid cdoid
 	"firstNode" : "Database"
 }
 ```
+### Call
+To get the list of all audit settings:
+
+`
+/audit/history/:cdoId/dates?page=0&size=10
+`
+### Purpose
+To get the audit dates
+### Pre-Requisites
+You will need a valid cdoid
+### Return Values
 ###Open Queries
 * not clear what audit dates mean
 * are these the dates when an governance rule is run
+* list of errors returned by API 
+* Result in JSON format
 
 ## Audit History Ids For Date
 ```shell
