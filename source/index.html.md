@@ -474,6 +474,53 @@ When API call is not reachable
 * list of errors returned by API 
 
 # Matches
+## Governance Get Matches
+>API Call
+
+```shell
+curl --location -g --request GET '{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/governance/matches?page=0&size=10' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBvcWlzckJtUTRPdk0tR2M1cnc5OCJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZnhuOTd6MS51cy5hdXRoMC5jb20vIiwic3ViIjoiZWZTY0ZUbUpMM3FYcjI5R0FaMHZGZmluNzZsNFJkNDRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9jcm9zc2NvZGUubG9jYWwiLCJpYXQiOjE1OTgzNTE5OTIsImV4cCI6MTU5ODk1Njc5MiwiYXpwIjoiZWZTY0ZUbUpMM3FYcjI5R0FaMHZGZmluNzZsNFJkNDQiLCJzY29wZSI6InJlYWQ6Z3JhcGggd3JpdGU6Z3JhcGgiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.LEBp80NaAzfOtXdF7Y2HJ_05IoIJi1OCWtgM4v7gKB_CAX5Mg2XcxbZ6Nhn89-VxB_Hrx_jgM5jOmq3GSlcd9igrBqKBweX4P4-0xxabojlwOzwBwv0k_hU13WWBlsYsgNxIVZxuq0bYKJFuZt4SEjUSe7HTvHjjHzpDSV7lFiulD_cFZ8ukWo_DHHfKXfe6yIAcnF0EWCGh_6T_Bj_WLIhEoz-U-WknMang1XJqF-z5shVlbbt2jFVn77UAf_T5sMOZsOo2lc-LwdEG2zCTnFYJL7uZTadqNNyHPMj-WzMLgzqHYEL0pe0Ydxx6NwEsiH3FDWdRTAL8p_Al9wM_vw' \
+--data-raw ''
+```
+
+```javascript
+var settings = {
+  "url": "{{http(s)}}://{{baseUrl}}:{{basePort}}{{contextPath}}/audit/governance/matches?page=0&size=10",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBvcWlzckJtUTRPdk0tR2M1cnc5OCJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZnhuOTd6MS51cy5hdXRoMC5jb20vIiwic3ViIjoiZWZTY0ZUbUpMM3FYcjI5R0FaMHZGZmluNzZsNFJkNDRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9jcm9zc2NvZGUubG9jYWwiLCJpYXQiOjE1OTgzNTE5OTIsImV4cCI6MTU5ODk1Njc5MiwiYXpwIjoiZWZTY0ZUbUpMM3FYcjI5R0FaMHZGZmluNzZsNFJkNDQiLCJzY29wZSI6InJlYWQ6Z3JhcGggd3JpdGU6Z3JhcGgiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.LEBp80NaAzfOtXdF7Y2HJ_05IoIJi1OCWtgM4v7gKB_CAX5Mg2XcxbZ6Nhn89-VxB_Hrx_jgM5jOmq3GSlcd9igrBqKBweX4P4-0xxabojlwOzwBwv0k_hU13WWBlsYsgNxIVZxuq0bYKJFuZt4SEjUSe7HTvHjjHzpDSV7lFiulD_cFZ8ukWo_DHHfKXfe6yIAcnF0EWCGh_6T_Bj_WLIhEoz-U-WknMang1XJqF-z5shVlbbt2jFVn77UAf_T5sMOZsOo2lc-LwdEG2zCTnFYJL7uZTadqNNyHPMj-WzMLgzqHYEL0pe0Ydxx6NwEsiH3FDWdRTAL8p_Al9wM_vw"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+> Return Values
+
+```
+{"status":"success","data":{"page":0,"totalPages":1,"elements":2,"totalElements":2,"ruleMatches":[{"governanceMatchId":"6018010b5213a86743b77918","commitId":"3132.00","matchedOn":"2021-02-01T13:24:26.979Z","author":"1830468e-0d24-4e58-9f1d-6c5136b8548a","auditRuleId":"601800e55213a86743b7470f","auditRuleName":"Created By Automation","snapshotId":"8b8aa4d5-97a7-3fc5-aee5-5d0984dd6167","changeDescription":"AffectedObject: crosscode-core-services-0.0.7-SNAPSHOT.jar\n\nnew object: crosscode-core-services-0.0.7-SNAPSHOT.jar"},{"governanceMatchId":"6018010c5213a86743b7792d","commitId":"3133.00","matchedOn":"2021-02-01T13:24:28.283Z","author":"1830468e-0d24-4e58-9f1d-6c5136b8548a","auditRuleId":"601800e55213a86743b7470f","auditRuleName":"Created By Automation","snapshotId":"87474358-c6fb-3c94-93c6-521dbfa864e4","changeDescription":"AffectedObject: Code-First-Demo\n\nnew object: Code-First-Demo"}]}}
+```
+
+### Purpose
+????
+### Pre-Requisites
+You will need a valid session
+### Call
+To get the list of ??
+
+`
+/audit/governance/matches?page=0&size=10
+`
+### Return Values
+#### 404
+When API call is not reachable
+### Open Queries
+* Need to understand purpose
+* list of errors returned by API 
 
 # FusionAuth
 # AuthController
