@@ -523,6 +523,48 @@ When API call is not reachable
 * list of errors returned by API 
 
 # FusionAuth
+## Password Flow Token
+>API Call
+
+```shell
+curl --location -g --request POST '{{http(s)}}://{{baseUrl}}:{{fusionAuthPort}}/oauth2/token?grant_type=password&client_id={{clientId}}&client_secret={{clientSecret}}&username={{username}}&password={{password}}'
+```
+
+```javascript
+var settings = {
+  "url": "{{http(s)}}://{{baseUrl}}:{{fusionAuthPort}}/oauth2/token?grant_type=password&client_id={{clientId}}&client_secret={{clientSecret}}&username={{username}}&password={{password}}",
+  "method": "POST",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+> Return Values
+
+```
+{"status":"success","data":{"page":0,"totalPages":1,"elements":2,"totalElements":2,"ruleMatches":[{"governanceMatchId":"6018010b5213a86743b77918","commitId":"3132.00","matchedOn":"2021-02-01T13:24:26.979Z","author":"1830468e-0d24-4e58-9f1d-6c5136b8548a","auditRuleId":"601800e55213a86743b7470f","auditRuleName":"Created By Automation","snapshotId":"8b8aa4d5-97a7-3fc5-aee5-5d0984dd6167","changeDescription":"AffectedObject: crosscode-core-services-0.0.7-SNAPSHOT.jar\n\nnew object: crosscode-core-services-0.0.7-SNAPSHOT.jar"},{"governanceMatchId":"6018010c5213a86743b7792d","commitId":"3133.00","matchedOn":"2021-02-01T13:24:28.283Z","author":"1830468e-0d24-4e58-9f1d-6c5136b8548a","auditRuleId":"601800e55213a86743b7470f","auditRuleName":"Created By Automation","snapshotId":"87474358-c6fb-3c94-93c6-521dbfa864e4","changeDescription":"AffectedObject: Code-First-Demo\n\nnew object: Code-First-Demo"}]}}
+```
+
+### Purpose
+I think to login to Fusion Auth????
+### Pre-Requisites
+Not sure??
+### Call
+To get the list of ??
+
+`
+/oauth2/token?grant_type=password&client_id={{clientId}}&client_secret={{clientSecret}}&username={{username}}&password={{password}}
+`
+### Return Values
+#### 404
+When API call is not reachable
+### Open Queries
+* Need to understand purpose
+* list of errors returned by API 
+* from where I will get to know clientid and clientsecret?
+
 # AuthController
 # Dependency
 # Ingestion
