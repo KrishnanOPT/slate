@@ -76,6 +76,11 @@ Server is too slow
 # History
 History API's are used for getting historical audit trails 
 ## Audit history dates
+To get the list of all audit settings:
+
+`
+/audit/history/:cdoId/dates?page=0&size=10
+`
 >API Call
 
 ```shell
@@ -107,13 +112,6 @@ $.ajax(settings).done(function (response) {
 To get the audit dates
 ### Pre-Requisites
 You will need a valid cdoid
-### Call
-
-To get the list of all audit settings:
-
-`
-/audit/history/:cdoId/dates?page=0&size=10
-`
 ### Return Values
 > Return value from API
 
